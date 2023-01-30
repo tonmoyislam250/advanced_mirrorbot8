@@ -1,13 +1,13 @@
 from asyncio import get_event_loop
 from faulthandler import enable as faulthandler_enable
 from logging import (INFO, FileHandler, StreamHandler, basicConfig, error,
-                     getLogger, info, warning)
+                     getLogger, error as log_error, info, warning)
 from os import environ, path, remove
 from socket import setdefaulttimeout
 from subprocess import Popen, run
 from threading import Lock, Thread
 from time import sleep, time
-import requests
+from requests import get as rget
 
 from aria2p import API as ariaAPI
 from aria2p import Client as ariaClient
