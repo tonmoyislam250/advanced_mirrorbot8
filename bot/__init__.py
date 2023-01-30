@@ -7,6 +7,7 @@ from socket import setdefaulttimeout
 from subprocess import Popen, run
 from threading import Lock, Thread
 from time import sleep, time
+import requests
 
 from aria2p import API as ariaAPI
 from aria2p import Client as ariaClient
