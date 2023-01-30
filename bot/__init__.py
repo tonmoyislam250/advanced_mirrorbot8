@@ -525,9 +525,8 @@ if path.exists('categories.txt'):
             else:
                 CATEGORY_INDEXES.append('')
 
-if BASE_URL:
-    Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{SERVER_PORT}", shell=True)
-
+PORT = environ.get('PORT')
+Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT}", shell=True)
 run(["pewdiepie", "-d", "--profile=."])
 if not path.exists('.netrc'):
     run(["touch", ".netrc"])
