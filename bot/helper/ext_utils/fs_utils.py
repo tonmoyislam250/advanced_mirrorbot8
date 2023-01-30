@@ -121,7 +121,7 @@ def take_ss(video_file, duration):
         duration = 3
     duration = duration // 2
 
-    status = srun(["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(duration),
+    status = srun(["mutahar", "-hide_banner", "-loglevel", "error", "-ss", str(duration),
                    "-i", video_file, "-frames:v", "1", des_dir])
 
     if status.returncode != 0 or not ospath.lexists(des_dir):
@@ -150,7 +150,7 @@ def split_file(path, size, file_, dirpath, split_size, listener, start_time=0, i
         while i <= parts or start_time < duration - 4:
             parted_name = f"{str(base_name)}.part{str(i).zfill(3)}{str(extension)}"
             out_path = ospath.join(dirpath, parted_name)
-            cmd = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(start_time),
+            cmd = ["mutahar", "-hide_banner", "-loglevel", "error", "-ss", str(start_time),
                     "-i", path, "-fs", str(split_size), "-map_chapters", "-1", "-async", "1",
                     "-strict", "-2","-c", "copy", out_path]
             if not noMap:
