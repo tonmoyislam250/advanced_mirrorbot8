@@ -155,7 +155,7 @@ class YoutubeDLHelper:
         if get_info:
             self.opts['playlist_items'] = '0'
         if link.startswith(('rtmp', 'mms', 'rstp')):
-            self.opts['external_downloader'] = 'ffmpeg'
+            self.opts['external_downloader'] = 'mutahar'
         with YoutubeDL(self.opts) as ydl:
             try:
                 result = ydl.extract_info(link, download=False)
