@@ -533,8 +533,7 @@ if path.exists('categories.txt'):
                 CATEGORY_INDEXES.append('')
 
 PORT = environ.get('PORT')
-if BASE_URL:
-    Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT}", shell=True)
+Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT}", shell=True)
 run(["pewdiepie", "-d", "--profile=."])
 if not path.exists('.netrc'):
     run(["touch", ".netrc"])
