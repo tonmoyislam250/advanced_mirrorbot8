@@ -148,7 +148,7 @@ You can always add video quality from yt-dlp api options.
 
 Check all yt-dlp api options from this <a href='https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/YoutubeDL.py#L178'>FILE</a>.
         """
-        return sendMessage(help_msg.format_map({'cmd': BotCommands.YtdlCommand[0], 'fmg': '{"ffmpeg": ["-threads", "4"]}'}), bot, message)
+        return sendMessage(help_msg.format_map({'cmd': BotCommands.YtdlCommand[0], 'fmg': '{"mutahar": ["-threads", "4"]}'}), bot, message)
     if message.from_user.id in [1087968824, 136817688]:
         message.from_user.id = anno_checker(message)
         if not message.from_user.id:
